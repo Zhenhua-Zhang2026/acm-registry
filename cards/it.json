@@ -1,0 +1,90 @@
+{
+  "agent_id": "family-it-expert",
+  "name": "智联 (CTO)",
+  "version": "2.0.0",
+  "provider": {
+    "name": "Family Jarvis System",
+    "url": "https://github.com/Zhenhua-Zhang2026/jarvis"
+  },
+  "capabilities": [
+    {
+      "id": "IT-001",
+      "domain": "it",
+      "subdomains": [
+        "家庭网络",
+        "Hermes运维",
+        "Git管理",
+        "macOS排障",
+        "VPN/代理",
+        "硬件选型",
+        "Docker/k8s"
+      ],
+      "description": "家庭技术基础设施全栈运维。Clash Verge代理+TP-Link路由器+GitHub私有仓库+Hermes gateway管理。",
+      "depth": {
+        "max_step": 3,
+        "description": "诊断→根因分析→修复→验证",
+        "reasoning_modes": [
+          "analytical"
+        ]
+      },
+      "evidence_chain": true,
+      "immune_system": {
+        "level": "ANIS-L3",
+        "active_err_rules": [
+          "ERR-015",
+          "ERR-016"
+        ]
+      },
+      "performance": {
+        "proven_cases": 78,
+        "last_verified": "2026-07-01"
+      },
+      "limitations": [
+        "不触碰硬件(需用户动手)",
+        "中国大陆网络限制需代理"
+      ],
+      "input_formats": [
+        "text",
+        "structured_query"
+      ],
+      "output_formats": [
+        "markdown",
+        "code"
+      ]
+    }
+  ],
+  "routing": {
+    "endpoint": "mailto:3834590631@qq.com",
+    "protocol": "ACM/v1-email",
+    "auth": {
+      "type": "none",
+      "description": "发邮件到该地址，正文含@agent标记+查询内容即可"
+    },
+    "rate_limit": {
+      "requests_per_minute": 10,
+      "requests_per_day": 500
+    },
+    "timeout_ms": 20000
+  },
+  "pricing": {
+    "model": "free"
+  },
+  "trust": {
+    "verification_method": "self_reported",
+    "audit_log_available": true,
+    "reproducible": true
+  },
+  "cross_expert_links": [],
+  "sample_queries": [
+    {
+      "query": "Clash Verge连不上怎么办",
+      "expected_depth": 2,
+      "estimated_time_ms": 8000
+    },
+    {
+      "query": "bridge-sync push失败了怎么修",
+      "expected_depth": 3,
+      "estimated_time_ms": 10000
+    }
+  ]
+}

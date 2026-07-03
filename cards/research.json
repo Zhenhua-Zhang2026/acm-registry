@@ -1,0 +1,176 @@
+{
+  "agent_id": "family-research-expert",
+  "name": "先知 (CRO)",
+  "version": "2.5.6",
+  "provider": {
+    "name": "Family Jarvis System",
+    "url": "https://github.com/Zhenhua-Zhang2026/jarvis"
+  },
+  "capabilities": [
+    {
+      "id": "RES-001",
+      "domain": "research",
+      "subdomains": [
+        "AI/大模型",
+        "医学突破",
+        "经济学(NBER)",
+        "材料/能源",
+        "行业热点(GitHub/HF)"
+      ],
+      "description": "全球学术前沿每日扫描。arXiv API+PubMed E-utilities+NBER browser_console+HuggingFace daily_papers多信源。每天10-15条发现，4步深研推理链。",
+      "depth": {
+        "max_step": 4,
+        "description": "Step0原始发现(95%)→Step1直接后果(75%)→Step2二阶效应(55%)→Step3结构变化(35%)→Step4边缘情景(20%)",
+        "reasoning_modes": [
+          "analytical",
+          "predictive",
+          "scenario"
+        ]
+      },
+      "evidence_chain": true,
+      "immune_system": {
+        "level": "ANIS-L4",
+        "active_err_rules": [
+          "ERR-001",
+          "ERR-002",
+          "ERR-003",
+          "ERR-004",
+          "ERR-009",
+          "ERR-010"
+        ],
+        "description": "12个已验证陷阱+API优先策略+反幻觉四自检。所有发现标注可追溯URL/DOI。"
+      },
+      "performance": {
+        "accuracy_3month": null,
+        "proven_cases": 191,
+        "last_verified": "2026-07-02"
+      },
+      "limitations": [
+        "PubMed间歇超时",
+        "arXiv Varnish空缓存(陷阱#10)",
+        "GitHub搜索噪音>90%",
+        "NBER仅标题非全文"
+      ],
+      "input_formats": [
+        "text",
+        "structured_query"
+      ],
+      "output_formats": [
+        "markdown",
+        "reasoning_chain",
+        "daily_report"
+      ]
+    },
+    {
+      "id": "RES-002",
+      "domain": "research",
+      "subdomains": [
+        "深研推演",
+        "跨域共振",
+        "预测追踪"
+      ],
+      "description": "深研引擎:每日发现分发给5位专家并行推演4步推理链。跨域共振检测(2+专家Step交汇)。S链交叉审计+验证回访。",
+      "depth": {
+        "max_step": 4,
+        "reasoning_modes": [
+          "analytical",
+          "predictive",
+          "scenario"
+        ]
+      },
+      "evidence_chain": true,
+      "immune_system": {
+        "level": "ANIS-L4"
+      },
+      "performance": {
+        "proven_cases": 35,
+        "last_verified": "2026-07-01"
+      },
+      "limitations": [
+        "需5位专家均在线",
+        "共振检测依赖高质量推理链"
+      ],
+      "input_formats": [
+        "text"
+      ],
+      "output_formats": [
+        "reasoning_chain",
+        "resonance_report"
+      ]
+    }
+  ],
+  "routing": {
+    "endpoint": "mailto:3834590631@qq.com",
+    "protocol": "ACM/v1-email",
+    "auth": {
+      "type": "none",
+      "description": "发邮件到该地址，正文含@agent标记+查询内容即可"
+    },
+    "rate_limit": {
+      "requests_per_minute": 5,
+      "requests_per_day": 200
+    },
+    "timeout_ms": 30000
+  },
+  "pricing": {
+    "model": "free",
+    "tiers": [
+      {
+        "name": "前沿速览",
+        "price": "免费",
+        "includes": [
+          "当日Top10发现",
+          "投资启示",
+          "落地时间线"
+        ]
+      },
+      {
+        "name": "深研推演",
+        "price": "免费(限量)",
+        "includes": [
+          "4步推理链",
+          "跨域共振",
+          "预测追踪"
+        ]
+      }
+    ]
+  },
+  "trust": {
+    "verification_method": "prediction_tracking",
+    "audit_log_available": true,
+    "reproducible": true,
+    "certifications": [
+      "所有发现标注可追溯URL/DOI",
+      "ERR-009四自检防幻觉"
+    ]
+  },
+  "cross_expert_links": [
+    {
+      "expert_id": "family-finance-expert",
+      "relationship": "complementary",
+      "description": "所有发现同步锐思，投资启示双向验证"
+    },
+    {
+      "expert_id": "family-doctor-expert",
+      "relationship": "complementary",
+      "description": "医学突破推送康宁"
+    },
+    {
+      "expert_id": "family-tutor-expert",
+      "relationship": "complementary",
+      "description": "认知科学前沿推送林悦"
+    }
+  ],
+  "sample_queries": [
+    {
+      "query": "最近一周AI领域有什么重大突破",
+      "expected_depth": 3,
+      "estimated_time_ms": 12000
+    },
+    {
+      "query": "量子计算对加密有什么影响",
+      "expected_depth": 4,
+      "estimated_time_ms": 15000
+    }
+  ]
+}

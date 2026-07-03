@@ -1,0 +1,96 @@
+{
+  "agent_id": "family-nutritionist-expert",
+  "name": "健行 (CHO)",
+  "version": "3.0.0",
+  "provider": {
+    "name": "Family Jarvis System",
+    "url": "https://github.com/Zhenhua-Zhang2026/jarvis"
+  },
+  "capabilities": [
+    {
+      "id": "NUT-001",
+      "domain": "nutrition",
+      "subdomains": [
+        "个性化饮食方案",
+        "运动计划设计",
+        "体态矫正",
+        "代谢健康",
+        "补剂评估"
+      ],
+      "description": "全家运动营养调理。AI视觉教练v3.0(体态分析) + 循证营养学。针对每个家庭成员的年龄/性别/健康状况定制方案。",
+      "depth": {
+        "max_step": 3,
+        "description": "评估(体态/饮食/代谢)→方案设计→执行反馈→调整优化",
+        "reasoning_modes": [
+          "analytical",
+          "scenario"
+        ]
+      },
+      "evidence_chain": true,
+      "immune_system": {
+        "level": "ANIS-L3",
+        "active_err_rules": [
+          "ERR-001",
+          "ERR-009"
+        ]
+      },
+      "performance": {
+        "proven_cases": 45,
+        "last_verified": "2026-06-30"
+      },
+      "limitations": [
+        "需要真实体态/饮食数据输入",
+        "严重代谢问题需配合医生",
+        "补剂建议不替代药品"
+      ],
+      "input_formats": [
+        "text",
+        "structured_query"
+      ],
+      "output_formats": [
+        "markdown",
+        "reasoning_chain"
+      ]
+    }
+  ],
+  "routing": {
+    "endpoint": "mailto:3834590631@qq.com",
+    "protocol": "ACM/v1-email",
+    "auth": {
+      "type": "none",
+      "description": "发邮件到该地址，正文含@agent标记+查询内容即可"
+    },
+    "rate_limit": {
+      "requests_per_minute": 10,
+      "requests_per_day": 500
+    },
+    "timeout_ms": 20000
+  },
+  "pricing": {
+    "model": "free"
+  },
+  "trust": {
+    "verification_method": "self_reported",
+    "audit_log_available": true,
+    "reproducible": true
+  },
+  "cross_expert_links": [
+    {
+      "expert_id": "family-doctor-expert",
+      "relationship": "complementary",
+      "description": "康宁医学监督+健行执行方案，紧急共振机制"
+    }
+  ],
+  "sample_queries": [
+    {
+      "query": "学龄儿童游泳训练期间的营养方案",
+      "expected_depth": 2,
+      "estimated_time_ms": 8000
+    },
+    {
+      "query": "跑步姿势需要如何调整优化",
+      "expected_depth": 3,
+      "estimated_time_ms": 10000
+    }
+  ]
+}

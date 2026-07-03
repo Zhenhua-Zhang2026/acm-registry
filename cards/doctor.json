@@ -1,0 +1,113 @@
+{
+  "agent_id": "family-doctor-expert",
+  "name": "康宁 (CMO)",
+  "version": "2.0.0",
+  "provider": {
+    "name": "Family Jarvis System",
+    "url": "https://github.com/Zhenhua-Zhang2026/jarvis"
+  },
+  "capabilities": [
+    {
+      "id": "MED-001",
+      "domain": "health",
+      "subdomains": [
+        "疾病预防",
+        "用药指导",
+        "体检解读",
+        "慢性病管理",
+        "临床研究评估"
+      ],
+      "description": "家庭全生命周期健康管理。PubMed+NEJM+Lancet+JAMA一手文献追踪，临床证据分级(Grade I-IV)，健康数据加密存储。",
+      "depth": {
+        "max_step": 3,
+        "description": "症状/数据→鉴别诊断→循证建议。超出家庭医学范围时标注[需面诊]",
+        "reasoning_modes": [
+          "analytical",
+          "scenario"
+        ]
+      },
+      "evidence_chain": true,
+      "immune_system": {
+        "level": "ANIS-L3",
+        "active_err_rules": [
+          "ERR-001",
+          "ERR-009"
+        ],
+        "description": "不做远程诊断，所有建议标注证据等级。加密存储保护敏感数据。"
+      },
+      "performance": {
+        "proven_cases": 89,
+        "last_verified": "2026-06-30"
+      },
+      "limitations": [
+        "不替代医生面诊",
+        "不给处方药建议",
+        "健康数据严格加密，不外传",
+        "急诊情况建议直接就医"
+      ],
+      "input_formats": [
+        "text",
+        "structured_query"
+      ],
+      "output_formats": [
+        "markdown",
+        "reasoning_chain"
+      ]
+    }
+  ],
+  "routing": {
+    "endpoint": "mailto:3834590631@qq.com",
+    "protocol": "ACM/v1-email",
+    "auth": {
+      "type": "none",
+      "description": "发邮件到该地址，正文含@agent标记+查询内容即可"
+    },
+    "rate_limit": {
+      "requests_per_minute": 10,
+      "requests_per_day": 500
+    },
+    "timeout_ms": 25000
+  },
+  "pricing": {
+    "model": "free",
+    "tiers": [
+      {
+        "name": "健康咨询",
+        "price": "免费(家庭内部)"
+      }
+    ]
+  },
+  "trust": {
+    "verification_method": "peer_review",
+    "audit_log_available": true,
+    "reproducible": true,
+    "certifications": [
+      "循证医学方法论(Grade分级)",
+      "PubMed E-utilities API一手信源"
+    ]
+  },
+  "cross_expert_links": [
+    {
+      "expert_id": "family-nutritionist-expert",
+      "relationship": "complementary",
+      "description": "健行提供饮食运动方案，康宁提供医学监督"
+    },
+    {
+      "expert_id": "family-research-expert",
+      "relationship": "complementary",
+      "description": "先知推送医学前沿突破"
+    }
+  ],
+  "sample_queries": [
+    {
+      "query": "某病理检查结果提示息肉，需要如何跟进",
+      "expected_depth": 3,
+      "estimated_time_ms": 12000
+    },
+    {
+      "query": "GLP-1药物对非肥胖人群有效吗",
+      "expected_depth": 3,
+      "estimated_time_ms": 10000
+    }
+  ]
+}

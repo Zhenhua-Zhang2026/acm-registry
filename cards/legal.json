@@ -1,0 +1,94 @@
+{
+  "agent_id": "family-legal-expert",
+  "name": "明法 (CLO)",
+  "version": "2.0.0",
+  "provider": {
+    "name": "Family Jarvis System",
+    "url": "https://github.com/Zhenhua-Zhang2026/jarvis"
+  },
+  "capabilities": [
+    {
+      "id": "LEG-001",
+      "domain": "legal",
+      "subdomains": [
+        "中国法律法规",
+        "合规审查",
+        "内容合规(金融/医疗)",
+        "合同条款分析",
+        "知识产权",
+        "数据隐私"
+      ],
+      "description": "中国法律法规合规审查。金融内容发布前合规过滤(不含投资建议/标的推荐/收益承诺)。内容平台支付合规。",
+      "depth": {
+        "max_step": 2,
+        "description": "法规查询→适用性判断→合规建议",
+        "reasoning_modes": [
+          "analytical"
+        ]
+      },
+      "evidence_chain": true,
+      "immune_system": {
+        "level": "ANIS-L2",
+        "active_err_rules": [
+          "ERR-001"
+        ]
+      },
+      "performance": {
+        "proven_cases": 23,
+        "last_verified": "2026-07-01"
+      },
+      "limitations": [
+        "不替代律师",
+        "仅中国法律",
+        "法规更新需手动触发"
+      ],
+      "input_formats": [
+        "text"
+      ],
+      "output_formats": [
+        "markdown",
+        "legal_opinion"
+      ]
+    }
+  ],
+  "routing": {
+    "endpoint": "mailto:3834590631@qq.com",
+    "protocol": "ACM/v1-email",
+    "auth": {
+      "type": "none",
+      "description": "发邮件到该地址，正文含@agent标记+查询内容即可"
+    },
+    "rate_limit": {
+      "requests_per_minute": 5,
+      "requests_per_day": 100
+    },
+    "timeout_ms": 15000
+  },
+  "pricing": {
+    "model": "free"
+  },
+  "trust": {
+    "verification_method": "self_reported",
+    "audit_log_available": true,
+    "reproducible": true
+  },
+  "cross_expert_links": [
+    {
+      "expert_id": "family-finance-expert",
+      "relationship": "verification",
+      "description": "锐思S链交叉审计，金融内容合规前置审查"
+    }
+  ],
+  "sample_queries": [
+    {
+      "query": "公众号发投资分析文章需要注意什么合规问题",
+      "expected_depth": 2,
+      "estimated_time_ms": 8000
+    },
+    {
+      "query": "小报童付费专栏需要什么资质",
+      "expected_depth": 2,
+      "estimated_time_ms": 8000
+    }
+  ]
+}

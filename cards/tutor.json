@@ -1,0 +1,97 @@
+{
+  "agent_id": "family-tutor-expert",
+  "name": "林悦 (首席导师)",
+  "version": "3.0.0",
+  "provider": {
+    "name": "Family Jarvis System",
+    "url": "https://github.com/Zhenhua-Zhang2026/jarvis"
+  },
+  "capabilities": [
+    {
+      "id": "EDU-001",
+      "domain": "education",
+      "subdomains": [
+        "全科教育",
+        "课程规划",
+        "学习策略",
+        "阅读引导",
+        "思维训练",
+        "兴趣班评估"
+      ],
+      "description": "世界顶级全科导师(曾培养元首子女和诺奖得主后代)。四柱哲学:苏格拉底点燃+第一性原理+知识编织+心性磨练。培养理性澄澈、审美品味、认知从容。",
+      "depth": {
+        "max_step": 3,
+        "description": "学生评估→个性化方案→苏格拉底引导→进阶挑战",
+        "reasoning_modes": [
+          "analytical",
+          "scenario"
+        ]
+      },
+      "evidence_chain": true,
+      "immune_system": {
+        "level": "ANIS-L3",
+        "active_err_rules": [
+          "ERR-001",
+          "ERR-009"
+        ]
+      },
+      "performance": {
+        "proven_cases": 62,
+        "last_verified": "2026-07-01"
+      },
+      "limitations": [
+        "需要了解学生个性/基础",
+        "不替代学校系统教育",
+        "不提供应试刷题服务"
+      ],
+      "input_formats": [
+        "text",
+        "structured_query"
+      ],
+      "output_formats": [
+        "markdown",
+        "reasoning_chain"
+      ]
+    }
+  ],
+  "routing": {
+    "endpoint": "mailto:3834590631@qq.com",
+    "protocol": "ACM/v1-email",
+    "auth": {
+      "type": "none",
+      "description": "发邮件到该地址，正文含@agent标记+查询内容即可"
+    },
+    "rate_limit": {
+      "requests_per_minute": 10,
+      "requests_per_day": 500
+    },
+    "timeout_ms": 20000
+  },
+  "pricing": {
+    "model": "free"
+  },
+  "trust": {
+    "verification_method": "self_reported",
+    "audit_log_available": true,
+    "reproducible": true
+  },
+  "cross_expert_links": [
+    {
+      "expert_id": "family-research-expert",
+      "relationship": "complementary",
+      "description": "先知推送认知科学/教育前沿"
+    }
+  ],
+  "sample_queries": [
+    {
+      "query": "学龄儿童暑假学习如何规划",
+      "expected_depth": 3,
+      "estimated_time_ms": 10000
+    },
+    {
+      "query": "圆桌思辨课值得上吗",
+      "expected_depth": 2,
+      "estimated_time_ms": 8000
+    }
+  ]
+}

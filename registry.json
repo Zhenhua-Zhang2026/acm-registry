@@ -1,0 +1,289 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-03T13:13:11.786070+00:00",
+  "total_agents": 8,
+  "agents": {
+    "family-doctor-expert": {
+      "name": "康宁 (CMO)",
+      "domains": [
+        "health"
+      ],
+      "capability_ids": [
+        "MED-001"
+      ],
+      "max_depth": 3,
+      "immune_level": "ANIS-L3",
+      "endpoint": "mailto:3834590631@qq.com"
+    },
+    "family-finance-expert": {
+      "name": "锐思 (CIO)",
+      "domains": [
+        "investment"
+      ],
+      "capability_ids": [
+        "FIN-001",
+        "FIN-002"
+      ],
+      "max_depth": 4,
+      "immune_level": "ANIS-L4",
+      "endpoint": "mailto:3834590631@qq.com"
+    },
+    "family-it-expert": {
+      "name": "智联 (CTO)",
+      "domains": [
+        "it"
+      ],
+      "capability_ids": [
+        "IT-001"
+      ],
+      "max_depth": 3,
+      "immune_level": "ANIS-L3",
+      "endpoint": "mailto:3834590631@qq.com"
+    },
+    "family-legal-expert": {
+      "name": "明法 (CLO)",
+      "domains": [
+        "legal"
+      ],
+      "capability_ids": [
+        "LEG-001"
+      ],
+      "max_depth": 2,
+      "immune_level": "ANIS-L2",
+      "endpoint": "mailto:3834590631@qq.com"
+    },
+    "family-nutritionist-expert": {
+      "name": "健行 (CHO)",
+      "domains": [
+        "nutrition"
+      ],
+      "capability_ids": [
+        "NUT-001"
+      ],
+      "max_depth": 3,
+      "immune_level": "ANIS-L3",
+      "endpoint": "mailto:3834590631@qq.com"
+    },
+    "family-research-expert": {
+      "name": "先知 (CRO)",
+      "domains": [
+        "research"
+      ],
+      "capability_ids": [
+        "RES-001",
+        "RES-002"
+      ],
+      "max_depth": 4,
+      "immune_level": "ANIS-L4",
+      "endpoint": "mailto:3834590631@qq.com"
+    },
+    "family-secretary-expert": {
+      "name": "井然 (COO)",
+      "domains": [
+        "secretary"
+      ],
+      "capability_ids": [
+        "SEC-001"
+      ],
+      "max_depth": 2,
+      "immune_level": "ANIS-L2",
+      "endpoint": "mailto:3834590631@qq.com"
+    },
+    "family-tutor-expert": {
+      "name": "林悦 (首席导师)",
+      "domains": [
+        "education"
+      ],
+      "capability_ids": [
+        "EDU-001"
+      ],
+      "max_depth": 3,
+      "immune_level": "ANIS-L3",
+      "endpoint": "mailto:3834590631@qq.com"
+    }
+  },
+  "domain_index": {
+    "health": [
+      "family-doctor-expert"
+    ],
+    "investment": [
+      "family-finance-expert"
+    ],
+    "it": [
+      "family-it-expert"
+    ],
+    "legal": [
+      "family-legal-expert"
+    ],
+    "nutrition": [
+      "family-nutritionist-expert"
+    ],
+    "research": [
+      "family-research-expert"
+    ],
+    "secretary": [
+      "family-secretary-expert"
+    ],
+    "education": [
+      "family-tutor-expert"
+    ]
+  },
+  "keyword_index": {
+    "疾病预防": [
+      "family-doctor-expert"
+    ],
+    "用药指导": [
+      "family-doctor-expert"
+    ],
+    "体检解读": [
+      "family-doctor-expert"
+    ],
+    "慢性病管理": [
+      "family-doctor-expert"
+    ],
+    "临床研究评估": [
+      "family-doctor-expert"
+    ],
+    "a股": [
+      "family-finance-expert"
+    ],
+    "美股": [
+      "family-finance-expert"
+    ],
+    "全球资产配置": [
+      "family-finance-expert"
+    ],
+    "量化策略": [
+      "family-finance-expert"
+    ],
+    "etf": [
+      "family-finance-expert"
+    ],
+    "宏观分析": [
+      "family-finance-expert"
+    ],
+    "行业赛道": [
+      "family-finance-expert"
+    ],
+    "量化回测": [
+      "family-finance-expert"
+    ],
+    "因子分析": [
+      "family-finance-expert"
+    ],
+    "模拟交易": [
+      "family-finance-expert"
+    ],
+    "家庭网络": [
+      "family-it-expert"
+    ],
+    "hermes运维": [
+      "family-it-expert"
+    ],
+    "git管理": [
+      "family-it-expert"
+    ],
+    "macos排障": [
+      "family-it-expert"
+    ],
+    "vpn/代理": [
+      "family-it-expert"
+    ],
+    "硬件选型": [
+      "family-it-expert"
+    ],
+    "docker/k8s": [
+      "family-it-expert"
+    ],
+    "中国法律法规": [
+      "family-legal-expert"
+    ],
+    "合规审查": [
+      "family-legal-expert"
+    ],
+    "内容合规(金融/医疗)": [
+      "family-legal-expert"
+    ],
+    "合同条款分析": [
+      "family-legal-expert"
+    ],
+    "知识产权": [
+      "family-legal-expert"
+    ],
+    "数据隐私": [
+      "family-legal-expert"
+    ],
+    "个性化饮食方案": [
+      "family-nutritionist-expert"
+    ],
+    "运动计划设计": [
+      "family-nutritionist-expert"
+    ],
+    "体态矫正": [
+      "family-nutritionist-expert"
+    ],
+    "代谢健康": [
+      "family-nutritionist-expert"
+    ],
+    "补剂评估": [
+      "family-nutritionist-expert"
+    ],
+    "ai/大模型": [
+      "family-research-expert"
+    ],
+    "医学突破": [
+      "family-research-expert"
+    ],
+    "经济学(nber)": [
+      "family-research-expert"
+    ],
+    "材料/能源": [
+      "family-research-expert"
+    ],
+    "行业热点(github/hf)": [
+      "family-research-expert"
+    ],
+    "深研推演": [
+      "family-research-expert"
+    ],
+    "跨域共振": [
+      "family-research-expert"
+    ],
+    "预测追踪": [
+      "family-research-expert"
+    ],
+    "日程管理": [
+      "family-secretary-expert"
+    ],
+    "旅行规划": [
+      "family-secretary-expert"
+    ],
+    "课程排期": [
+      "family-secretary-expert"
+    ],
+    "提醒服务": [
+      "family-secretary-expert"
+    ],
+    "家庭事务协调": [
+      "family-secretary-expert"
+    ],
+    "全科教育": [
+      "family-tutor-expert"
+    ],
+    "课程规划": [
+      "family-tutor-expert"
+    ],
+    "学习策略": [
+      "family-tutor-expert"
+    ],
+    "阅读引导": [
+      "family-tutor-expert"
+    ],
+    "思维训练": [
+      "family-tutor-expert"
+    ],
+    "兴趣班评估": [
+      "family-tutor-expert"
+    ]
+  }
+}

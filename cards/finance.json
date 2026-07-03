@@ -1,0 +1,194 @@
+{
+  "agent_id": "family-finance-expert",
+  "name": "锐思 (CIO)",
+  "version": "3.0.0",
+  "provider": {
+    "name": "Family Jarvis System",
+    "url": "https://github.com/Zhenhua-Zhang2026/jarvis",
+    "contact": "contact@family-jarvis.internal"
+  },
+  "capabilities": [
+    {
+      "id": "FIN-001",
+      "domain": "investment",
+      "subdomains": [
+        "A股",
+        "美股",
+        "全球资产配置",
+        "量化策略",
+        "ETF",
+        "宏观分析",
+        "行业赛道"
+      ],
+      "description": "中美市场投资分析与资产配置。五框架交叉验证(王煜全产业化拐点+何刚业绩验证+徐远宏观定价+泽平政策方向+吴军S曲线)，量化引擎驱动(L_score+趋势+动量+情绪+资金流五因子)。",
+      "depth": {
+        "max_step": 4,
+        "description": "Step0原始信息→Step1直接后果1-3月(75%)→Step2二阶效应3-12月(55%)→Step3结构变化1-3年(35%)→Step4边缘情景3年+(20%)",
+        "reasoning_modes": [
+          "analytical",
+          "predictive",
+          "scenario"
+        ]
+      },
+      "evidence_chain": true,
+      "immune_system": {
+        "level": "ANIS-L4",
+        "active_err_rules": [
+          "ERR-001",
+          "ERR-002",
+          "ERR-003",
+          "ERR-009",
+          "ERR-010"
+        ],
+        "description": "13条ERR规则+多专家交叉验证铁律+五框架预注入。独立风控官分离制衡。"
+      },
+      "performance": {
+        "accuracy_3month": 0.615,
+        "accuracy_6month": null,
+        "proven_cases": 247,
+        "last_verified": "2026-07-02"
+      },
+      "limitations": [
+        "不做日内交易建议",
+        "不推荐个股(仅ETF/指数)",
+        "预测置信度随步数严格衰减",
+        "单日涨跌不作为调仓信号"
+      ],
+      "input_formats": [
+        "text",
+        "structured_query"
+      ],
+      "output_formats": [
+        "markdown",
+        "reasoning_chain",
+        "prediction"
+      ]
+    },
+    {
+      "id": "FIN-002",
+      "domain": "investment",
+      "subdomains": [
+        "量化回测",
+        "因子分析",
+        "模拟交易"
+      ],
+      "description": "五因子量化引擎: L_score(长期价值)+MOM(动量)+SENT(情绪)+FUND_FLOW(资金流)+VOL(波动率)。模拟交易账户独立运行，每日复盘。",
+      "depth": {
+        "max_step": 3,
+        "description": "因子提取→信号合成→回测验证",
+        "reasoning_modes": [
+          "analytical",
+          "predictive"
+        ]
+      },
+      "evidence_chain": true,
+      "immune_system": {
+        "level": "ANIS-L4",
+        "active_err_rules": [
+          "ERR-001",
+          "ERR-009"
+        ],
+        "description": "量化信号与基本面冲突时自动标记conflicts，Supervisor仲裁"
+      },
+      "performance": {
+        "accuracy_3month": 0.615,
+        "proven_cases": 156,
+        "last_verified": "2026-07-02"
+      },
+      "limitations": [
+        "回测不代表未来",
+        "因子权重需定期优化",
+        "单因子失效时信号脆弱"
+      ],
+      "input_formats": [
+        "text",
+        "structured_query"
+      ],
+      "output_formats": [
+        "json",
+        "reasoning_chain"
+      ]
+    }
+  ],
+  "routing": {
+    "endpoint": "mailto:3834590631@qq.com",
+    "protocol": "ACM/v1-email",
+    "auth": {
+      "type": "none",
+      "description": "发邮件到该地址，正文含@agent标记+查询内容即可"
+    },
+    "rate_limit": {
+      "requests_per_minute": 10,
+      "requests_per_day": 500
+    },
+    "timeout_ms": 30000
+  },
+  "pricing": {
+    "model": "free",
+    "tiers": [
+      {
+        "name": "标准查询",
+        "price": "免费",
+        "includes": [
+          "单专家分析",
+          "2步推理深度",
+          "基础置信度"
+        ]
+      },
+      {
+        "name": "深度研究",
+        "price": "免费(限量)",
+        "includes": [
+          "多专家并行",
+          "4步完整推理链",
+          "五框架交叉验证",
+          "预测追踪"
+        ]
+      }
+    ]
+  },
+  "trust": {
+    "verification_method": "prediction_tracking",
+    "audit_log_available": true,
+    "reproducible": true,
+    "certifications": [
+      "五框架验证系统(周六自动回访)",
+      "独立绩效归因周报",
+      "S链交叉审计"
+    ]
+  },
+  "cross_expert_links": [
+    {
+      "expert_id": "family-research-expert",
+      "relationship": "complementary",
+      "description": "先知提供前沿突破扫描，锐思转化为投资信号"
+    },
+    {
+      "expert_id": "family-legal-expert",
+      "relationship": "verification",
+      "description": "明法审查投资合规性，S链交叉审计"
+    }
+  ],
+  "sample_queries": [
+    {
+      "query": "某行业ETF当前估值是否合理，应如何配置",
+      "expected_depth": 4,
+      "estimated_time_ms": 15000
+    },
+    {
+      "query": "下半年哪些赛道值得关注",
+      "expected_depth": 4,
+      "estimated_time_ms": 20000
+    },
+    {
+      "query": "美股科技板块估值分析",
+      "expected_depth": 3,
+      "estimated_time_ms": 12000
+    },
+    {
+      "query": "当前持仓结构需要调整吗",
+      "expected_depth": 4,
+      "estimated_time_ms": 15000
+    }
+  ]
+}
