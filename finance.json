@@ -1,0 +1,139 @@
+{
+  "name": "锐思 (CIO)",
+  "description": "中美市场投资分析与资产配置。五框架交叉验证(王煜全产业化拐点+何刚业绩验证+徐远宏观定价+泽平政策方向+吴军S曲线)，量化引擎驱动(L_score+趋势+动量+情绪+资金流五因子)。",
+  "version": "3.0.0",
+  "documentationUrl": "https://zhenhua-zhang2026.github.io/acm-registry/",
+  "supportedInterfaces": [
+    {
+      "url": "mailto:3834590631@qq.com",
+      "protocolBinding": "email",
+      "protocolVersion": "1.0"
+    },
+    {
+      "url": "https://zhenhua-zhang2026.github.io/acm-registry/",
+      "protocolBinding": "https",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "provider": {
+    "organization": "Family Jarvis System",
+    "url": "https://github.com/Zhenhua-Zhang2026/jarvis"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": true
+  },
+  "defaultInputModes": [
+    "text",
+    "text/structured"
+  ],
+  "defaultOutputModes": [
+    "text/markdown",
+    "application/json"
+  ],
+  "securitySchemes": {},
+  "securityRequirements": [],
+  "skills": [
+    {
+      "id": "FIN-001",
+      "name": "FIN-001",
+      "description": "中美市场投资分析与资产配置。五框架交叉验证(王煜全产业化拐点+何刚业绩验证+徐远宏观定价+泽平政策方向+吴军S曲线)，量化引擎驱动(L_score+趋势+动量+情绪+资金流五因子)。",
+      "tags": [
+        "A股",
+        "美股",
+        "全球资产配置",
+        "量化策略",
+        "ETF",
+        "宏观分析",
+        "行业赛道"
+      ],
+      "examples": [
+        "某行业ETF当前估值是否合理，应如何配置",
+        "下半年哪些赛道值得关注",
+        "美股科技板块估值分析"
+      ],
+      "inputModes": [
+        "text",
+        "text/structured"
+      ],
+      "outputModes": [
+        "text/markdown",
+        "application/json"
+      ]
+    }
+  ],
+  "x-acm": {
+    "agent_id": "family-finance-expert",
+    "reasoning_depth": {
+      "max_step": 4,
+      "description": "Step0原始信息→Step1直接后果1-3月(75%)→Step2二阶效应3-12月(55%)→Step3结构变化1-3年(35%)→Step4边缘情景3年+(20%)",
+      "modes": [
+        "analytical",
+        "predictive",
+        "scenario"
+      ],
+      "evidence_chain": true
+    },
+    "immune_system": {
+      "level": "ANIS-L4",
+      "description": "13条ERR规则+多专家交叉验证铁律+五框架预注入。独立风控官分离制衡。",
+      "active_rules": [
+        "ERR-001",
+        "ERR-002",
+        "ERR-003",
+        "ERR-009",
+        "ERR-010"
+      ]
+    },
+    "performance": {
+      "accuracy_3month": 0.615,
+      "accuracy_6month": null,
+      "proven_cases": 247,
+      "last_verified": "2026-07-02"
+    },
+    "limitations": [
+      "不做日内交易建议",
+      "不推荐个股(仅ETF/指数)",
+      "预测置信度随步数严格衰减",
+      "单日涨跌不作为调仓信号"
+    ],
+    "cross_expert_links": [
+      {
+        "expert_id": "family-research-expert",
+        "relationship": "complementary",
+        "description": "先知提供前沿突破扫描，锐思转化为投资信号"
+      },
+      {
+        "expert_id": "family-legal-expert",
+        "relationship": "verification",
+        "description": "明法审查投资合规性，S链交叉审计"
+      }
+    ],
+    "pricing": {
+      "model": "free",
+      "tiers": [
+        {
+          "name": "标准查询",
+          "price": "免费",
+          "includes": [
+            "单专家分析",
+            "2步推理深度",
+            "基础置信度"
+          ]
+        },
+        {
+          "name": "深度研究",
+          "price": "免费(限量)",
+          "includes": [
+            "多专家并行",
+            "4步完整推理链",
+            "五框架交叉验证",
+            "预测追踪"
+          ]
+        }
+      ]
+    }
+  },
+  "signatures": []
+}

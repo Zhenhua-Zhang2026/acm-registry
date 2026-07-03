@@ -1,0 +1,111 @@
+{
+  "name": "康宁 (CMO)",
+  "description": "家庭全生命周期健康管理。PubMed+NEJM+Lancet+JAMA一手文献追踪，临床证据分级(Grade I-IV)，健康数据加密存储。",
+  "version": "2.0.0",
+  "documentationUrl": "https://zhenhua-zhang2026.github.io/acm-registry/",
+  "supportedInterfaces": [
+    {
+      "url": "mailto:3834590631@qq.com",
+      "protocolBinding": "email",
+      "protocolVersion": "1.0"
+    },
+    {
+      "url": "https://zhenhua-zhang2026.github.io/acm-registry/",
+      "protocolBinding": "https",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "provider": {
+    "organization": "Family Jarvis System",
+    "url": "https://github.com/Zhenhua-Zhang2026/jarvis"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": true
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text/markdown"
+  ],
+  "securitySchemes": {},
+  "securityRequirements": [],
+  "skills": [
+    {
+      "id": "MED-001",
+      "name": "MED-001",
+      "description": "家庭全生命周期健康管理。PubMed+NEJM+Lancet+JAMA一手文献追踪，临床证据分级(Grade I-IV)，健康数据加密存储。",
+      "tags": [
+        "疾病预防",
+        "用药指导",
+        "体检解读",
+        "慢性病管理",
+        "临床研究评估"
+      ],
+      "examples": [
+        "某病理检查结果提示息肉，需要如何跟进",
+        "GLP-1药物对非肥胖人群有效吗"
+      ],
+      "inputModes": [
+        "text"
+      ],
+      "outputModes": [
+        "text/markdown"
+      ]
+    }
+  ],
+  "x-acm": {
+    "agent_id": "family-doctor-expert",
+    "reasoning_depth": {
+      "max_step": 3,
+      "description": "症状/数据→鉴别诊断→循证建议。超出家庭医学范围时标注[需面诊]",
+      "modes": [
+        "analytical",
+        "scenario"
+      ],
+      "evidence_chain": true
+    },
+    "immune_system": {
+      "level": "ANIS-L3",
+      "description": "不做远程诊断，所有建议标注证据等级。加密存储保护敏感数据。",
+      "active_rules": [
+        "ERR-001",
+        "ERR-009"
+      ]
+    },
+    "performance": {
+      "proven_cases": 89,
+      "last_verified": "2026-06-30"
+    },
+    "limitations": [
+      "不替代医生面诊",
+      "不给处方药建议",
+      "健康数据严格加密，不外传",
+      "急诊情况建议直接就医"
+    ],
+    "cross_expert_links": [
+      {
+        "expert_id": "family-nutritionist-expert",
+        "relationship": "complementary",
+        "description": "健行提供饮食运动方案，康宁提供医学监督"
+      },
+      {
+        "expert_id": "family-research-expert",
+        "relationship": "complementary",
+        "description": "先知推送医学前沿突破"
+      }
+    ],
+    "pricing": {
+      "model": "free",
+      "tiers": [
+        {
+          "name": "健康咨询",
+          "price": "免费(家庭内部)"
+        }
+      ]
+    }
+  },
+  "signatures": []
+}

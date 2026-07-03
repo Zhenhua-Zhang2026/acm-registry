@@ -1,0 +1,138 @@
+{
+  "name": "先知 (CRO)",
+  "description": "全球学术前沿每日扫描。arXiv API+PubMed E-utilities+NBER browser_console+HuggingFace daily_papers多信源。每天10-15条发现，4步深研推理链。",
+  "version": "2.5.6",
+  "documentationUrl": "https://zhenhua-zhang2026.github.io/acm-registry/",
+  "supportedInterfaces": [
+    {
+      "url": "mailto:3834590631@qq.com",
+      "protocolBinding": "email",
+      "protocolVersion": "1.0"
+    },
+    {
+      "url": "https://zhenhua-zhang2026.github.io/acm-registry/",
+      "protocolBinding": "https",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "provider": {
+    "organization": "Family Jarvis System",
+    "url": "https://github.com/Zhenhua-Zhang2026/jarvis"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": true
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text/markdown",
+    "application/json"
+  ],
+  "securitySchemes": {},
+  "securityRequirements": [],
+  "skills": [
+    {
+      "id": "RES-001",
+      "name": "RES-001",
+      "description": "全球学术前沿每日扫描。arXiv API+PubMed E-utilities+NBER browser_console+HuggingFace daily_papers多信源。每天10-15条发现，4步深研推理链。",
+      "tags": [
+        "AI/大模型",
+        "医学突破",
+        "经济学(NBER)",
+        "材料/能源",
+        "行业热点(GitHub/HF)"
+      ],
+      "examples": [
+        "最近一周AI领域有什么重大突破",
+        "量子计算对加密有什么影响"
+      ],
+      "inputModes": [
+        "text"
+      ],
+      "outputModes": [
+        "text/markdown",
+        "application/json"
+      ]
+    }
+  ],
+  "x-acm": {
+    "agent_id": "family-research-expert",
+    "reasoning_depth": {
+      "max_step": 4,
+      "description": "Step0原始发现(95%)→Step1直接后果(75%)→Step2二阶效应(55%)→Step3结构变化(35%)→Step4边缘情景(20%)",
+      "modes": [
+        "analytical",
+        "predictive",
+        "scenario"
+      ],
+      "evidence_chain": true
+    },
+    "immune_system": {
+      "level": "ANIS-L4",
+      "description": "12个已验证陷阱+API优先策略+反幻觉四自检。所有发现标注可追溯URL/DOI。",
+      "active_rules": [
+        "ERR-001",
+        "ERR-002",
+        "ERR-003",
+        "ERR-004",
+        "ERR-009",
+        "ERR-010"
+      ]
+    },
+    "performance": {
+      "accuracy_3month": null,
+      "proven_cases": 191,
+      "last_verified": "2026-07-02"
+    },
+    "limitations": [
+      "PubMed间歇超时",
+      "arXiv Varnish空缓存(陷阱#10)",
+      "GitHub搜索噪音>90%",
+      "NBER仅标题非全文"
+    ],
+    "cross_expert_links": [
+      {
+        "expert_id": "family-finance-expert",
+        "relationship": "complementary",
+        "description": "所有发现同步锐思，投资启示双向验证"
+      },
+      {
+        "expert_id": "family-doctor-expert",
+        "relationship": "complementary",
+        "description": "医学突破推送康宁"
+      },
+      {
+        "expert_id": "family-tutor-expert",
+        "relationship": "complementary",
+        "description": "认知科学前沿推送林悦"
+      }
+    ],
+    "pricing": {
+      "model": "free",
+      "tiers": [
+        {
+          "name": "前沿速览",
+          "price": "免费",
+          "includes": [
+            "当日Top10发现",
+            "投资启示",
+            "落地时间线"
+          ]
+        },
+        {
+          "name": "深研推演",
+          "price": "免费(限量)",
+          "includes": [
+            "4步推理链",
+            "跨域共振",
+            "预测追踪"
+          ]
+        }
+      ]
+    }
+  },
+  "signatures": []
+}

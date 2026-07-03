@@ -1,0 +1,95 @@
+{
+  "name": "智联 (CTO)",
+  "description": "家庭技术基础设施全栈运维。Clash Verge代理+TP-Link路由器+GitHub私有仓库+Hermes gateway管理。",
+  "version": "2.0.0",
+  "documentationUrl": "https://zhenhua-zhang2026.github.io/acm-registry/",
+  "supportedInterfaces": [
+    {
+      "url": "mailto:3834590631@qq.com",
+      "protocolBinding": "email",
+      "protocolVersion": "1.0"
+    },
+    {
+      "url": "https://zhenhua-zhang2026.github.io/acm-registry/",
+      "protocolBinding": "https",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "provider": {
+    "organization": "Family Jarvis System",
+    "url": "https://github.com/Zhenhua-Zhang2026/jarvis"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": true
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text/markdown",
+    "text/x-code"
+  ],
+  "securitySchemes": {},
+  "securityRequirements": [],
+  "skills": [
+    {
+      "id": "IT-001",
+      "name": "IT-001",
+      "description": "家庭技术基础设施全栈运维。Clash Verge代理+TP-Link路由器+GitHub私有仓库+Hermes gateway管理。",
+      "tags": [
+        "家庭网络",
+        "Hermes运维",
+        "Git管理",
+        "macOS排障",
+        "VPN/代理",
+        "硬件选型",
+        "Docker/k8s"
+      ],
+      "examples": [
+        "Clash Verge连不上怎么办",
+        "bridge-sync push失败了怎么修"
+      ],
+      "inputModes": [
+        "text"
+      ],
+      "outputModes": [
+        "text/markdown",
+        "text/x-code"
+      ]
+    }
+  ],
+  "x-acm": {
+    "agent_id": "family-it-expert",
+    "reasoning_depth": {
+      "max_step": 3,
+      "description": "诊断→根因分析→修复→验证",
+      "modes": [
+        "analytical"
+      ],
+      "evidence_chain": true
+    },
+    "immune_system": {
+      "level": "ANIS-L3",
+      "description": "",
+      "active_rules": [
+        "ERR-015",
+        "ERR-016"
+      ]
+    },
+    "performance": {
+      "proven_cases": 78,
+      "last_verified": "2026-07-01"
+    },
+    "limitations": [
+      "不触碰硬件(需用户动手)",
+      "中国大陆网络限制需代理"
+    ],
+    "cross_expert_links": [],
+    "pricing": {
+      "model": "free"
+    }
+  },
+  "signatures": []
+}

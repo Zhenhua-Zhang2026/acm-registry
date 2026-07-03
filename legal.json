@@ -1,0 +1,98 @@
+{
+  "name": "明法 (CLO)",
+  "description": "中国法律法规合规审查。金融内容发布前合规过滤(不含投资建议/标的推荐/收益承诺)。内容平台支付合规。",
+  "version": "2.0.0",
+  "documentationUrl": "https://zhenhua-zhang2026.github.io/acm-registry/",
+  "supportedInterfaces": [
+    {
+      "url": "mailto:3834590631@qq.com",
+      "protocolBinding": "email",
+      "protocolVersion": "1.0"
+    },
+    {
+      "url": "https://zhenhua-zhang2026.github.io/acm-registry/",
+      "protocolBinding": "https",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "provider": {
+    "organization": "Family Jarvis System",
+    "url": "https://github.com/Zhenhua-Zhang2026/jarvis"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": true
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text/markdown"
+  ],
+  "securitySchemes": {},
+  "securityRequirements": [],
+  "skills": [
+    {
+      "id": "LEG-001",
+      "name": "LEG-001",
+      "description": "中国法律法规合规审查。金融内容发布前合规过滤(不含投资建议/标的推荐/收益承诺)。内容平台支付合规。",
+      "tags": [
+        "中国法律法规",
+        "合规审查",
+        "内容合规(金融/医疗)",
+        "合同条款分析",
+        "知识产权",
+        "数据隐私"
+      ],
+      "examples": [
+        "公众号发投资分析文章需要注意什么合规问题",
+        "小报童付费专栏需要什么资质"
+      ],
+      "inputModes": [
+        "text"
+      ],
+      "outputModes": [
+        "text/markdown"
+      ]
+    }
+  ],
+  "x-acm": {
+    "agent_id": "family-legal-expert",
+    "reasoning_depth": {
+      "max_step": 2,
+      "description": "法规查询→适用性判断→合规建议",
+      "modes": [
+        "analytical"
+      ],
+      "evidence_chain": true
+    },
+    "immune_system": {
+      "level": "ANIS-L2",
+      "description": "",
+      "active_rules": [
+        "ERR-001"
+      ]
+    },
+    "performance": {
+      "proven_cases": 23,
+      "last_verified": "2026-07-01"
+    },
+    "limitations": [
+      "不替代律师",
+      "仅中国法律",
+      "法规更新需手动触发"
+    ],
+    "cross_expert_links": [
+      {
+        "expert_id": "family-finance-expert",
+        "relationship": "verification",
+        "description": "锐思S链交叉审计，金融内容合规前置审查"
+      }
+    ],
+    "pricing": {
+      "model": "free"
+    }
+  },
+  "signatures": []
+}

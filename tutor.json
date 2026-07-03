@@ -1,0 +1,100 @@
+{
+  "name": "林悦 (首席导师)",
+  "description": "世界顶级全科导师(曾培养元首子女和诺奖得主后代)。四柱哲学:苏格拉底点燃+第一性原理+知识编织+心性磨练。培养理性澄澈、审美品味、认知从容。",
+  "version": "3.0.0",
+  "documentationUrl": "https://zhenhua-zhang2026.github.io/acm-registry/",
+  "supportedInterfaces": [
+    {
+      "url": "mailto:3834590631@qq.com",
+      "protocolBinding": "email",
+      "protocolVersion": "1.0"
+    },
+    {
+      "url": "https://zhenhua-zhang2026.github.io/acm-registry/",
+      "protocolBinding": "https",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "provider": {
+    "organization": "Family Jarvis System",
+    "url": "https://github.com/Zhenhua-Zhang2026/jarvis"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": true
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text/markdown"
+  ],
+  "securitySchemes": {},
+  "securityRequirements": [],
+  "skills": [
+    {
+      "id": "EDU-001",
+      "name": "EDU-001",
+      "description": "世界顶级全科导师(曾培养元首子女和诺奖得主后代)。四柱哲学:苏格拉底点燃+第一性原理+知识编织+心性磨练。培养理性澄澈、审美品味、认知从容。",
+      "tags": [
+        "全科教育",
+        "课程规划",
+        "学习策略",
+        "阅读引导",
+        "思维训练",
+        "兴趣班评估"
+      ],
+      "examples": [
+        "学龄儿童暑假学习如何规划",
+        "圆桌思辨课值得上吗"
+      ],
+      "inputModes": [
+        "text"
+      ],
+      "outputModes": [
+        "text/markdown"
+      ]
+    }
+  ],
+  "x-acm": {
+    "agent_id": "family-tutor-expert",
+    "reasoning_depth": {
+      "max_step": 3,
+      "description": "学生评估→个性化方案→苏格拉底引导→进阶挑战",
+      "modes": [
+        "analytical",
+        "scenario"
+      ],
+      "evidence_chain": true
+    },
+    "immune_system": {
+      "level": "ANIS-L3",
+      "description": "",
+      "active_rules": [
+        "ERR-001",
+        "ERR-009"
+      ]
+    },
+    "performance": {
+      "proven_cases": 62,
+      "last_verified": "2026-07-01"
+    },
+    "limitations": [
+      "需要了解学生个性/基础",
+      "不替代学校系统教育",
+      "不提供应试刷题服务"
+    ],
+    "cross_expert_links": [
+      {
+        "expert_id": "family-research-expert",
+        "relationship": "complementary",
+        "description": "先知推送认知科学/教育前沿"
+      }
+    ],
+    "pricing": {
+      "model": "free"
+    }
+  },
+  "signatures": []
+}

@@ -1,0 +1,99 @@
+{
+  "name": "健行 (CHO)",
+  "description": "全家运动营养调理。AI视觉教练v3.0(体态分析) + 循证营养学。针对每个家庭成员的年龄/性别/健康状况定制方案。",
+  "version": "3.0.0",
+  "documentationUrl": "https://zhenhua-zhang2026.github.io/acm-registry/",
+  "supportedInterfaces": [
+    {
+      "url": "mailto:3834590631@qq.com",
+      "protocolBinding": "email",
+      "protocolVersion": "1.0"
+    },
+    {
+      "url": "https://zhenhua-zhang2026.github.io/acm-registry/",
+      "protocolBinding": "https",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "provider": {
+    "organization": "Family Jarvis System",
+    "url": "https://github.com/Zhenhua-Zhang2026/jarvis"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": true
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text/markdown"
+  ],
+  "securitySchemes": {},
+  "securityRequirements": [],
+  "skills": [
+    {
+      "id": "NUT-001",
+      "name": "NUT-001",
+      "description": "全家运动营养调理。AI视觉教练v3.0(体态分析) + 循证营养学。针对每个家庭成员的年龄/性别/健康状况定制方案。",
+      "tags": [
+        "个性化饮食方案",
+        "运动计划设计",
+        "体态矫正",
+        "代谢健康",
+        "补剂评估"
+      ],
+      "examples": [
+        "学龄儿童游泳训练期间的营养方案",
+        "跑步姿势需要如何调整优化"
+      ],
+      "inputModes": [
+        "text"
+      ],
+      "outputModes": [
+        "text/markdown"
+      ]
+    }
+  ],
+  "x-acm": {
+    "agent_id": "family-nutritionist-expert",
+    "reasoning_depth": {
+      "max_step": 3,
+      "description": "评估(体态/饮食/代谢)→方案设计→执行反馈→调整优化",
+      "modes": [
+        "analytical",
+        "scenario"
+      ],
+      "evidence_chain": true
+    },
+    "immune_system": {
+      "level": "ANIS-L3",
+      "description": "",
+      "active_rules": [
+        "ERR-001",
+        "ERR-009"
+      ]
+    },
+    "performance": {
+      "proven_cases": 45,
+      "last_verified": "2026-06-30"
+    },
+    "limitations": [
+      "需要真实体态/饮食数据输入",
+      "严重代谢问题需配合医生",
+      "补剂建议不替代药品"
+    ],
+    "cross_expert_links": [
+      {
+        "expert_id": "family-doctor-expert",
+        "relationship": "complementary",
+        "description": "康宁医学监督+健行执行方案，紧急共振机制"
+      }
+    ],
+    "pricing": {
+      "model": "free"
+    }
+  },
+  "signatures": []
+}
