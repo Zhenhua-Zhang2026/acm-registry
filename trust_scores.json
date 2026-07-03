@@ -1,0 +1,45 @@
+{
+  "updated": "2026-07-03T13:54:49.185042+00:00",
+  "scores": {
+    "family-tutor-expert": {
+      "trust": 0.0,
+      "verified": 0,
+      "accuracy": null
+    },
+    "family-it-expert": {
+      "trust": 0.0,
+      "verified": 0,
+      "accuracy": null
+    },
+    "family-doctor-expert": {
+      "trust": 0.0,
+      "verified": 0,
+      "accuracy": null
+    },
+    "family-secretary-expert": {
+      "trust": 0.0,
+      "verified": 0,
+      "accuracy": null
+    },
+    "family-nutritionist-expert": {
+      "trust": 0.0,
+      "verified": 0,
+      "accuracy": null
+    },
+    "family-research-expert": {
+      "trust": 0.0,
+      "verified": 0,
+      "accuracy": null
+    },
+    "family-legal-expert": {
+      "trust": 0.0,
+      "verified": 0,
+      "accuracy": null
+    },
+    "family-finance-expert": {
+      "trust": 0.054,
+      "verified": 2,
+      "accuracy": 0.0
+    }
+  }
+}
